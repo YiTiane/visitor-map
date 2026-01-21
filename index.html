@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClustrMaps Globe Embed</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClustrMaps Globe Embed</title>
+  <style>
+    html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; }
+  </style>
 </head>
-<body style="margin:0;padding:0;overflow:hidden;">
-<script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=2d78ad&w=300&t=n&d=2P6oogHGCh6Jhf379HaN9YfZsw7rh2CNF1g2i1Xf0LQ&co=ffffff'></script>
+<body>
+  <script>
+    const w = Math.min(window.innerWidth, 1600); // 可设上限避免过大
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.id = 'mapmyvisitors';
+    s.src = `https://mapmyvisitors.com/map.js?cl=2d78ad&w=${w}&t=n&d=2P6oogHGCh6Jhf379HaN9YfZsw7rh2CNF1g2i1Xf0LQ&co=ffffff`;
+    document.body.appendChild(s);
+  </script>
 </body>
 </html>
+
